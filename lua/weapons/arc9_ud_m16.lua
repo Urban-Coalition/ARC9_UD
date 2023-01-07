@@ -77,7 +77,7 @@ SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 800
+SWEP.RPM = 900
 
 SWEP.Firemodes = {
     {
@@ -126,9 +126,9 @@ SWEP.UseVisualRecoil = true
 
 SWEP.PhysicalVisualRecoil = true
 
-SWEP.VisualRecoilUp = 0.5 -- Vertical tilt for visual recoil.F
+SWEP.VisualRecoilUp = 0.4 -- Vertical tilt for visual recoil.F
 SWEP.VisualRecoilSide = 0.1 -- Horizontal tilt for visual recoil.
-SWEP.VisualRecoilRoll = 30 -- Roll tilt for visual recoil.
+SWEP.VisualRecoilRoll = 20 -- Roll tilt for visual recoil.
 SWEP.VisualRecoilPunch = 0.25
 
 SWEP.VisualRecoil = 1
@@ -164,8 +164,8 @@ SWEP.FreeAimRadiusMultSights = 0
 
 SWEP.SwayMultSights = 0.1
 
-SWEP.AimDownSightsTime = 0.32 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.34 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.38 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.SpeedMult = 0.9
 SWEP.SpeedMultSights = 0.75
@@ -221,7 +221,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "muzzleflash_5" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_1" -- Used for some muzzle effects.
 
 SWEP.ShellModel = "models/weapons/arccw/uc_shells/556x45.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
@@ -264,6 +264,14 @@ SWEP.ShootSoundSilenced = {
     path .. "fire-sup-05.ogg",
     path .. "fire-sup-06.ogg"
 }
+SWEP.ShootSoundSilencedIndoor = {
+    path .. "fire-sup-01.ogg",
+    path .. "fire-sup-02.ogg",
+    path .. "fire-sup-03.ogg",
+    path .. "fire-sup-04.ogg",
+    path .. "fire-sup-05.ogg",
+    path .. "fire-sup-06.ogg"
+}
 
 SWEP.DistantShootSound = {
     path .. "fire-dist-01.ogg",
@@ -273,7 +281,6 @@ SWEP.DistantShootSound = {
     path .. "fire-dist-05.ogg",
     path .. "fire-dist-06.ogg"
 }
-
 SWEP.DistantShootSoundIndoor = {
     common .. "fire-dist-int-rifle-01.ogg",
     common .. "fire-dist-int-rifle-02.ogg",
@@ -295,8 +302,7 @@ SWEP.DistantShootSoundSilenced = {
     common .. "sup-tail-09.ogg",
     common .. "sup-tail-10.ogg"
 }
-
-SWEP.DistantShootSoundIndoorSilenced = {
+SWEP.DistantShootSoundSilencedIndoor = {
     common .. "fire-dist-int-pistol-light-01.ogg",
     common .. "fire-dist-int-pistol-light-02.ogg",
     common .. "fire-dist-int-pistol-light-03.ogg",
@@ -773,7 +779,147 @@ SWEP.ReloadHideBoneTables = {
 }
 
 SWEP.AttachmentElements = {
+    ["ud_m16_barrel_14"] = {
+        Bodygroups = {
+            {4, 1},
+            {6, 2},
+        },
+        AttPosMods = {
+            [3] = {
+                Pos = Vector(0, -0.33, 18.85),
+            }
+        }
+    },
+    ["ud_m16_barrel_10"] = {
+        Bodygroups = {
+            {4, 4},
+            {6, 2},
+        },
+        AttPosMods = {
+            [3] = {
+                Pos = Vector(0, -0.33, 15.7),
+            }
+        }
+    },
+
+    ["ud_m16_hg_a2_20"] = {
+        Bodygroups = {
+            {5, 0}
+        }
+    },
+    ["ud_m16_hg_a2_14"] = {
+        Bodygroups = {
+            {5, 4}
+        }
+    },
+    ["ud_m16_hg_a2_10"] = {
+        Bodygroups = {
+            {5, 4}
+        }
+    },
 }
 
 SWEP.Attachments = {
+    {
+        PrintName = "Optic",
+        Bone = "m16_parent",
+        Pos = Vector(0, -1.75, 3),
+        Ang = Angle(90, 0, -90),
+        Category = "optic",
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "Barrel",
+        Bone = "m16_parent",
+        Pos = Vector(0, -0.33, 8),
+        Ang = Angle(0, 0, 0),
+
+        Category = "ud_m16_blen",
+        Installed = "ud_m16_barrel_20",
+        Integral = true,
+    },
+    {
+        PrintName = "Muzzle",
+        Bone = "m16_parent",
+        Pos = Vector(0, -0.33, 23.25),
+        Ang = Angle(90, 0, -90),
+
+        Category = "muzzle",
+    },
+    {
+        PrintName = "Upper",
+        Bone = "m16_parent",
+        Pos = Vector(0, 0.5, 3.8),
+        Ang = Angle(90, 0, -90),
+
+        Category = "ud_m16_upper",
+        Installed = "ud_m16_upper_556",
+        Integral = true,
+    },
+    {
+        PrintName = "Lower",
+        Bone = "m16_parent",
+        Pos = Vector(0, 0.5, 0),
+        Ang = Angle(90, 0, -90),
+
+        Category = "ud_m16_lower",
+        Installed = "ud_m16_lower_burst",
+        Integral = true,
+    },
+    {
+        PrintName = "Grip",
+        Bone = "m16_parent",
+        Pos = Vector(0, 3.5, -1.3),
+        Ang = Angle(90, 0, -90),
+
+        Category = "ud_m16_grip",
+    },
+    {
+        PrintName = "Stock",
+        Bone = "m16_parent",
+        Pos = Vector(0, 0.25, -3),
+        Ang = Angle(90, 0, -90),
+
+        Category = "ud_m16_stock",
+    },
+    {
+        PrintName = "Magazine",
+        Bone = "m16_parent",
+        Pos = Vector(0, 3.5, 4),
+        Ang = Angle(90, 0, -90),
+
+        Category = "ud_m16_mag",
+    },
+    {
+        PrintName = "Ammo Type",
+        Bone = "m16_parent",
+        Pos = Vector(0, 6, 5.5),
+        Ang = Angle(90, 0, -90),
+
+        Category = "uc_ammo",
+    },
+    {
+        PrintName = "Powder Load",
+        Bone = "m16_parent",
+        Pos = Vector(0, 6, 3.5),
+        Ang = Angle(90, 0, -90),
+
+        Category = "uc_powder",
+    },
+    {
+        PrintName = "Training Package",
+        Bone = "m16_parent",
+        Pos = Vector(0, 4, -5),
+        Ang = Angle(90, 0, -90),
+
+        Category = "uc_tp",
+    },
+    {
+        PrintName = "Internals",
+        Bone = "m16_parent",
+        Pos = Vector(0, 4, -7),
+        Ang = Angle(90, 0, -90),
+
+        Category = "uc_fg",
+    },
 }
