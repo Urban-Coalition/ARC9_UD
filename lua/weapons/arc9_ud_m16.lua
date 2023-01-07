@@ -922,4 +922,9 @@ SWEP.Attachments = {
 
         Category = "uc_fg",
     },
+    {
+        PrintName = "Sticker A",
+        StickerModel = "models/weapons/arc9/stickers/ud_m16_sticker_stock.mdl",
+        Category = "stickers",
+    },
 }
