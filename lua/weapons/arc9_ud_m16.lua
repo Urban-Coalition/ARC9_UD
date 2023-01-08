@@ -182,12 +182,16 @@ SWEP.TracerColor = Color(255, 225, 200) -- Color of tracers. Only works if trace
 SWEP.IronSights = {
     Pos = Vector(-2.815, 0, 1.3),
     Ang = Angle(0, 0, 0),
-    Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(-4, 0, -8),
-        Ang = Angle(0, 0, 0),
-    },
     Magnification = 1.1,
 }
+
+SWEP.SightMidPoint = {
+    Pos = Vector(-3, 15, -5),
+    Ang = Angle(0, 0, -45),
+}
+
+SWEP.PeekPos = Vector(2, 0, -1)
+SWEP.PeekAng = Angle(0, 0, 0)
 
 SWEP.SprintAng = Angle(30, -15, 0)
 SWEP.SprintPos = Vector(5, -4, 0)
@@ -782,67 +786,165 @@ SWEP.AttachmentElements = {
     ["ud_m16_barrel_14"] = {
         Bodygroups = {
             {4, 1},
-            {6, 2},
         },
         AttPosMods = {
-            [3] = {
-                Pos = Vector(0, -0.33, 18.85),
-            }
+            [4] = {
+                Pos = Vector(0, -0.33, 19.5),
+            },
         }
     },
     ["ud_m16_barrel_10"] = {
         Bodygroups = {
             {4, 4},
-            {6, 2},
         },
         AttPosMods = {
-            [3] = {
+            [4] = {
                 Pos = Vector(0, -0.33, 15.7),
-            }
+            },
         }
     },
 
-    ["ud_m16_hg_a2_20"] = {
-        Bodygroups = {
-            {5, 0}
+    ["ud_m16_gb_short"] = {
+        AttPosMods = {
+            [14] = {
+                Pos = Vector(0, -0.33, 14),
+            },
         }
     },
-    ["ud_m16_hg_a2_14"] = {
+
+    ["ud_m16_top_flat"] = {
         Bodygroups = {
-            {5, 4}
+            {1, 1},
+            {3, 2},
         }
     },
-    ["ud_m16_hg_a2_10"] = {
+
+    ["ud_m16_ch_rail"] = {
         Bodygroups = {
-            {5, 4}
+            {3, 1},
         }
     },
+    ["ud_m16_ch_rail2"] = {
+        Bodygroups = {
+            {3, 3},
+        }
+    },
+
+    ["ud_m16_gas_lp"] = {}, -- handled in code
 }
+
+local blen = {
+    ["sd"] = -1,
+    ["20"] = 1,
+    ["14"] = 2,
+    ["fpw"] = 2,
+    ["10"] = 2,
+}
+
+local barrLookup = {
+    ["sd"] = -1,
+    ["20"] = 0,
+    ["14"] = 1,
+    ["fpw"] = 1,
+    ["10"] = 2,
+}
+
+local hgLookup = {
+    ["a2"]          = {0,4,0},
+    ["a1"]          = {1,1,1},
+    ["a4"]          = {2,5,0},
+    ["heat"]        = {10,10,1},
+    ["heatm203"]    = {11,11,1},
+    ["wood"]        = {1,1,1},
+    ["lmg"]         = {3,3,1},
+    ["fpw"]         = {6,6,2},
+    ["ru556"]       = {7,7,3},
+    ["adar"]        = {8,8,2},
+    ["hk416"]       = {9,9,3},
+    ["607"]         = {9,9,0},
+}
+
+SWEP.Hook_ModifyElements = function(wep, data)
+    local atts = wep.Attachments
+
+    local barrel = string.Replace(atts[2].Installed or "20", "ud_m16_barrel_", "")
+    local hg = string.Replace(atts[3].Installed or "ar","ud_m16_hg_","")
+    local gbPos = hgLookup[hg] and hgLookup[hg][3] or 0
+    local barr = barrLookup[barrel]
+
+    if gbPos == 0 and barrel ~= "20" then
+        data["ud_m16_gb_short"] = true
+    end
+end
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local vm = data.model
+    local atts = wep.Attachments
+    if !IsValid(vm) then return end
+
+    local barrel = string.Replace(atts[2].Installed or "20", "ud_m16_barrel_", "")
+    local hg = string.Replace(atts[3].Installed or "ar","ud_m16_hg_","")
+    local gbPos = hgLookup[hg] and hgLookup[hg][3] or 0
+    local barr = barrLookup[barrel]
+
+    if barrel == "sd" or (wep:HasElement("ud_m16_receiver_fpw") and barr > 0) then
+        vm:SetBodygroup(6,5)
+    else
+        local flat = wep:HasElement("ud_m16_gas_lp") and 1 or 0
+
+        if gbPos == 1 or barr == 0 then
+            vm:SetBodygroup(6, 0 + flat)
+        elseif gbPos == 2 then
+            vm:SetBodygroup(6, 4 + flat * 2)
+        elseif gbPos == 3 then
+            vm:SetBodygroup(6, 4 - flat)
+        else
+            vm:SetBodygroup(6, 2 + flat)
+        end
+    end
+
+    if hgLookup[hg] and blen[barrel] > 0 then
+        vm:SetBodygroup(5, hgLookup[hg][blen[barrel]])
+    end
+end
 
 SWEP.Attachments = {
     {
-        PrintName = "Optic",
+        PrintName = "Top",
         Bone = "m16_parent",
-        Pos = Vector(0, -1.75, 3),
+        Pos = Vector(0, -1.75, 0),
         Ang = Angle(90, 0, -90),
-        Category = "optic",
-        Icon_Offset = Vector(0, 0, 0),
+
+        Category = "ud_m16_top",
+        Installed = "ud_m16_top_ch",
+        Integral = "ud_m16_top_ch",
     },
     {
         PrintName = "Barrel",
         Bone = "m16_parent",
         Pos = Vector(0, -0.33, 8),
-        Ang = Angle(0, 0, 0),
+        Ang = Angle(90, 0, -90),
 
         Category = "ud_m16_blen",
         Installed = "ud_m16_barrel_20",
-        Integral = true,
+        Integral = "ud_m16_barrel_20",
+    },
+    {
+        PrintName = "Handguard",
+        Bone = "m16_parent",
+        Pos = Vector(0, -0.33, 10),
+        Ang = Angle(90, 0, -90),
+
+        Category = "ud_m16_hg",
+        Installed = "ud_m16_hg_a2",
+        Integral = "ud_m16_hg_a2",
     },
     {
         PrintName = "Muzzle",
         Bone = "m16_parent",
         Pos = Vector(0, -0.33, 23.25),
         Ang = Angle(90, 0, -90),
+        Icon_Offset = Vector(1, 0, 0),
 
         Category = "muzzle",
     },
@@ -854,7 +956,7 @@ SWEP.Attachments = {
 
         Category = "ud_m16_upper",
         Installed = "ud_m16_upper_556",
-        Integral = true,
+        Integral = "ud_m16_upper_556",
     },
     {
         PrintName = "Lower",
@@ -864,7 +966,7 @@ SWEP.Attachments = {
 
         Category = "ud_m16_lower",
         Installed = "ud_m16_lower_burst",
-        Integral = true,
+        Integral = "ud_m16_lower_burst",
     },
     {
         PrintName = "Grip",
@@ -873,6 +975,8 @@ SWEP.Attachments = {
         Ang = Angle(90, 0, -90),
 
         Category = "ud_m16_grip",
+        Installed = "ud_m16_grip_standard",
+        Integral = "ud_m16_grip_standard",
     },
     {
         PrintName = "Stock",
@@ -893,7 +997,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo Type",
         Bone = "m16_parent",
-        Pos = Vector(0, 6, 5.5),
+        Pos = Vector(0, 5.5, 4.75),
         Ang = Angle(90, 0, -90),
 
         Category = "uc_ammo",
@@ -901,7 +1005,7 @@ SWEP.Attachments = {
     {
         PrintName = "Powder Load",
         Bone = "m16_parent",
-        Pos = Vector(0, 6, 3.5),
+        Pos = Vector(0, 6, 2),
         Ang = Angle(90, 0, -90),
 
         Category = "uc_powder",
@@ -921,5 +1025,15 @@ SWEP.Attachments = {
         Ang = Angle(90, 0, -90),
 
         Category = "uc_fg",
+    },
+    {
+        PrintName = "Gas Block",
+        Bone = "m16_parent",
+        Pos = Vector(0, -0.33, 18.5),
+        Ang = Angle(90, 0, -90),
+
+        Category = "ud_m16_gas",
+        Installed = "ud_m16_gas",
+        Integral = "ud_m16_gas",
     },
 }
