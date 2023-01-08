@@ -844,6 +844,16 @@ SWEP.AttachmentElements = {
     },
 
     ["ud_m16_gas_lp"] = {}, -- handled in code
+
+    ["ud_stock_carbine_ex"] = {
+        Bodygroups = {{7, 7}},
+    },
+    ["ud_stock_carbine_in"] = {
+        Bodygroups = {{7, 8}},
+    },
+    ["ud_m16_stock_wood"] = {
+        Bodygroups = {{7, 9}},
+    },
 }
 
 local blen = {
@@ -999,6 +1009,8 @@ SWEP.Attachments = {
         Ang = Angle(90, 0, -90),
 
         Category = "ud_m16_stock",
+        Installed = "ud_m16_stock_full",
+        Integral = "ud_m16_stock_full",
     },
     {
         PrintName = "Magazine",

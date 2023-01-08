@@ -594,3 +594,68 @@ ATT.Category = "ud_m16_grip"
 ATT.SortOrder = 1
 
 ARC9.LoadAttachment(ATT, "ud_m16_grip_standard")
+
+-----------------------------------------------------------
+-- Stock
+-----------------------------------------------------------
+
+ATT = {}
+
+ATT.PrintName = "M16 Full Stock"
+ATT.CompactName = "Full"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_stock_default.png", "mips smooth")
+ATT.Description = [[Standard, full-sized stock.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_stock"
+ATT.SortOrder = 0
+
+ARC9.LoadAttachment(ATT, "ud_m16_stock_full")
+
+ATT = {}
+
+ATT.PrintName = "M16 Wooden Stock"
+ATT.CompactName = "Wood"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_stock_default.png", "mips smooth")
+ATT.Description = [[A sturdy stock made from wood. Heavier than polymer, and almost makes you wish for a nuclear winter.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_stock"
+ATT.SortOrder = 1
+
+ATT.RecoilAutoControlMult = 1.1
+ATT.SprintToFireTimeAdd = 0.02
+ATT.AimDownSightsTimeAdd = 0.02
+ATT.SpeedMult = 0.975
+ATT.SpeedMultSights = 0.9
+
+ARC9.LoadAttachment(ATT, "ud_m16_stock_wood")
+
+ATT = {}
+
+ATT.PrintName = "M16 Carbine Stock"
+ATT.CompactName = "Carbine"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_stock_carbine.png", "mips smooth")
+ATT.Description = [[Adjustable combat stock used on the XM177 carbine. When collapsed, it allows the user to move swiftly in close quarters; when extended, it functions similarly to a full stock.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_stock"
+ATT.SortOrder = 1
+
+ATT.SwayMult = 1.1
+
+ATT.ToggleStats = {
+    {
+        PrintName = "Extended",
+        ActivateElements = {"ud_stock_carbine_ex"},
+    },
+    {
+        PrintName = "Collapsed",
+        ActivateElements = {"ud_stock_carbine_in"},
+        RecoilRandomSideMult = 1.25,
+        BarrelLengthAdd = -4,
+        SpeedMultSights = 1.1,
+        SprintToFireTimeAdd = -0.04,
+        AimDownSightsTimeAdd = -0.04,
+    },
+}
+
+ARC9.LoadAttachment(ATT, "ud_m16_stock_carbine")
+
