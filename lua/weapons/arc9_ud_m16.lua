@@ -799,7 +799,7 @@ SWEP.AttachmentElements = {
         },
         AttPosMods = {
             [4] = {
-                Pos = Vector(0, -0.33, 15.7),
+                Pos = Vector(0, -0.33, 16),
             },
         }
     },
@@ -808,6 +808,19 @@ SWEP.AttachmentElements = {
         AttPosMods = {
             [14] = {
                 Pos = Vector(0, -0.33, 14),
+            },
+            [15] = {
+                Pos = Vector(0, -1.62, 12.25),
+            },
+        }
+    },
+    ["ud_m16_gb_ru556"] = {
+        AttPosMods = {
+            [14] = {
+                Pos = Vector(0, -0.33, 15.25),
+            },
+            [15] = {
+                Pos = Vector(0, -1.62, 13.5),
             },
         }
     },
@@ -870,10 +883,11 @@ SWEP.Hook_ModifyElements = function(wep, data)
     local barrel = string.Replace(atts[2].Installed or "20", "ud_m16_barrel_", "")
     local hg = string.Replace(atts[3].Installed or "ar","ud_m16_hg_","")
     local gbPos = hgLookup[hg] and hgLookup[hg][3] or 0
-    local barr = barrLookup[barrel]
 
     if gbPos == 0 and barrel ~= "20" then
         data["ud_m16_gb_short"] = true
+    elseif gbPos == 3 and barrel ~= "20" then
+        data["ud_m16_gb_ru556"] = true
     end
 end
 
@@ -1037,8 +1051,19 @@ SWEP.Attachments = {
         Integral = "ud_m16_gas",
     },
     {
+        PrintName = "Front Sight",
+        Bone = "m16_parent",
+        Pos = Vector(0, -1.62, 16.75),
+        Ang = Angle(90, 0, -90),
+        Icon_Offset = Vector(0, 0, 0),
+
+        Category = "ud_m16_fs",
+        RequireElements = {"ud_m16_fs"},
+    },
+
+    {
         PrintName = "Sticker A",
         StickerModel = "models/weapons/arc9/stickers/ud_m16_sticker_stock.mdl",
         Category = "stickers",
-    }
+    },
 }

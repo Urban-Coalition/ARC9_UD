@@ -267,6 +267,88 @@ ATT.IronSights = {
 
 ARC9.LoadAttachment(ATT, "ud_m16_rs_sclr")
 
+
+ATT = {}
+
+ATT.PrintName = "UTG Low Profile Front Sight"
+ATT.CompactName = "UTG"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_fs_colt.png", "mips smooth")
+ATT.Description = [[A2 style rail-mounted front sight for picatinny rails.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_fs"
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arccw/atts/colt_fs.mdl"
+
+ATT.Scale = 0.7
+
+ARC9.LoadAttachment(ATT, "ud_m16_fs_utg")
+
+ATT = {}
+
+ATT.PrintName = "SIG Flip-Up Front Sight"
+ATT.CompactName = "SIG"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_fs_sig.png", "mips smooth")
+ATT.Description = [[Removable front sight made by SIG Sauer. Designed to be mounted on forend rails.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_fs"
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arccw/atts/sig_fs.mdl"
+
+ATT.Scale = 0.7
+
+ARC9.LoadAttachment(ATT, "ud_m16_fs_sig")
+
+ATT = {}
+
+ATT.PrintName = "Scalarworks Front Sight"
+ATT.CompactName = "Scalarworks"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_fs_sclr.png", "mips smooth")
+ATT.Description = [[Removable front sight. Designed to be mounted on forend rails.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_fs"
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arccw/atts/scalerworks_fs.mdl"
+
+ATT.ModelOffset = Vector(0, 0.01, -0.1)
+ATT.Scale = 0.95
+
+ARC9.LoadAttachment(ATT, "ud_m16_fs_sclr")
+
+ATT = {}
+
+ATT.PrintName = "KAC Flip-Up Front Sight"
+ATT.CompactName = "KAC"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_fs_sclr.png", "mips smooth")
+ATT.Description = [[Removable front sight made by Knight's Armament Company. Designed to be mounted on forend rails.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_fs"
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arccw/atts/kac_fs.mdl"
+
+ATT.Scale = 0.7
+
+ARC9.LoadAttachment(ATT, "ud_m16_fs_kac")
+
+ATT = {}
+
+ATT.PrintName = "Magpul Flip-Up Front Sight"
+ATT.CompactName = "Magpul"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_fs_magpul.png", "mips smooth")
+ATT.Description = [[Removable front sight made by Magpul. Designed to be mounted on forend rails.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_fs"
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arccw/atts/magpul_fs.mdl"
+
+ATT.Scale = 0.73
+
+ARC9.LoadAttachment(ATT, "ud_m16_fs_magpul")
+
 -----------------------------------------------------------
 -- Barrel
 -----------------------------------------------------------
@@ -342,7 +424,7 @@ ATT.Icon = Material("entities/att/acwatt_ud_m16_hg_ribbed.png", "mips smooth")
 ATT.Description = [[Standard handguard.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_hg"
-ATT.SortOrder = 1
+ATT.SortOrder = 0
 
 ARC9.LoadAttachment(ATT, "ud_m16_hg_a2")
 
@@ -367,6 +449,42 @@ ATT.ActivateElements = {"ud_m16_no10"}
 ATT.ExcludeElements = {"ud_m16_barrel_10"}
 
 ARC9.LoadAttachment(ATT, "ud_m16_hg_a1")
+
+ATT = {}
+
+ATT.PrintName = "M16A4 Tactical Rail Handguard"
+ATT.CompactName = "Tactical"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_hg_ris.png", "mips smooth")
+ATT.Description = [[Barrel shroud equipped with a quad-rail RIS interface, allowing the rifle to accept the attachment of tactical devices and foregrips without any additional modification.
+The railed surface is harder to hold.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_hg"
+ATT.SortOrder = 1
+
+ATT.SwayMult = 1.1
+
+ATT.ActivateElements = {"ud_m16_fs"}
+
+ARC9.LoadAttachment(ATT, "ud_m16_hg_a4")
+
+ATT = {}
+
+ATT.PrintName = "M-LOK Aluminum Handguard"
+ATT.CompactName = "M-LOK"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_hg_ru556.png", "mips smooth")
+ATT.Description = [[Short handguard from the M-LOK line of AR-15 accessories, featuring a unique barrel shroud and top rail.
+The thin aluminum frame has extremely low weight.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_hg"
+ATT.SortOrder = 1
+
+ATT.SwayMult = 0.9
+ATT.AimDownSightsTimeAdd = -0.03
+ATT.RecoilRandomSideMult = 1.15
+
+ATT.ActivateElements = {"ud_m16_fs"}
+
+ARC9.LoadAttachment(ATT, "ud_m16_hg_ru556")
 
 -----------------------------------------------------------
 -- Upper Receiver
