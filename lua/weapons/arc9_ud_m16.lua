@@ -1036,4 +1036,9 @@ SWEP.Attachments = {
         Installed = "ud_m16_gas",
         Integral = "ud_m16_gas",
     },
+    {
+        PrintName = "Sticker A",
+        StickerModel = "models/weapons/arc9/stickers/ud_m16_sticker_stock.mdl",
+        Category = "stickers",
+    }
 }
