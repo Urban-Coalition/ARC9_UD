@@ -143,12 +143,8 @@ ATT.ModelOffset = Vector(-1.1, 0, 0.1)
 ATT.Scale = 0.75
 
 ATT.IronSights = {
-    Pos = Vector(-2.80, 0, 1.1),
+    Pos = Vector(-2.80, -5, 1.1),
     Ang = Angle(0, 0.4, 0),
-    Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(-4, 0, -8),
-        Ang = Angle(0, 0, 0),
-    },
     Magnification = 1.1,
 }
 
@@ -172,12 +168,8 @@ ATT.ModelOffset = Vector(-2, -0.002, 0)
 ATT.Scale = 0.86
 
 ATT.IronSights = {
-    Pos = Vector(-2.80, 0, 1),
+    Pos = Vector(-2.80, -5, 1),
     Ang = Angle(0, 0.5, 0),
-    Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(-4, 0, -8),
-        Ang = Angle(0, 0, 0),
-    },
     Magnification = 1.1,
 }
 
@@ -200,12 +192,8 @@ ATT.ModelOffset = Vector(-1.5, -0.01, -0.09)
 ATT.Scale = 0.9
 
 ATT.IronSights = {
-    Pos = Vector(-2.80, 0, 1),
+    Pos = Vector(-2.80, -5, 1),
     Ang = Angle(0, 0.5, 0),
-    Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(-4, 0, -8),
-        Ang = Angle(0, 0, 0),
-    },
     Magnification = 1.1,
 }
 
@@ -228,12 +216,8 @@ ATT.ModelOffset = Vector(-1.5, -0.005, 0)
 ATT.Scale = 0.87
 
 ATT.IronSights = {
-    Pos = Vector(-2.80, 0, 0.95),
+    Pos = Vector(-2.80, -5, 0.95),
     Ang = Angle(0, 0.55, 0),
-    Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(-4, 0, -8),
-        Ang = Angle(0, 0, 0),
-    },
     Magnification = 1.1,
 }
 
@@ -256,12 +240,8 @@ ATT.ModelOffset = Vector(-3, 0, -0.1)
 ATT.Scale = 1.17
 
 ATT.IronSights = {
-    Pos = Vector(-2.80, 0, 0.95),
+    Pos = Vector(-2.80, -5, 0.95),
     Ang = Angle(0, 0.55, 0),
-    Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(-4, 0, -8),
-        Ang = Angle(0, 0, 0),
-    },
     Magnification = 1.1,
 }
 
