@@ -29,18 +29,18 @@ SWEP.Description = [[Third generation of America's iconic military rifle. Army t
 Well-rounded gun with no major downsides.]]
 
 SWEP.ViewModel = "models/weapons/arccw/c_ud_m16.mdl"
-SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
+SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
 
 SWEP.Slot = 2
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(-8, 6, -8),
-    TPIKPos = Vector(-16, 4, -6),
+    Pos = Vector(-8, 3.5, -6.7),
+    TPIKPos = Vector(-7, 3.5, -3),
     Ang = Angle(-5, 0, 180),
-    Scale = 0.75
+    Scale = 1
 }
-SWEP.NoTPIKVMPos = true
+SWEP.NoTPIKVMPos = false
 
 SWEP.DefaultBodygroups = "0000000000000000000000"
 
@@ -211,10 +211,10 @@ SWEP.BipodPos = Vector(0, 0, 0)
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "ar2"
+SWEP.HoldType = "rpg"
 SWEP.HoldTypeSprint = "passive"
 SWEP.HoldTypeHolstered = "passive"
-SWEP.HoldTypeSights = "ar2"
+SWEP.HoldTypeSights = "rpg"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
