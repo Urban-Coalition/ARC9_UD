@@ -477,15 +477,77 @@ ARC9.LoadAttachment(ATT, "ud_m16_hg_ru556")
 
 ATT = {}
 
-ATT.PrintName = "M16 5.56x45mm Upper"
+ATT.PrintName = "M16 5.56x45mm Upper Receiver"
 ATT.CompactName = "5.56x45mm"
 ATT.Icon = Material("entities/att/uc_bullets/556x45.png", "mips smooth")
 ATT.Description = [[Standard upper receiver firing 5.56x45mm NATO rounds.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_upper"
-ATT.SortOrder = 1
+ATT.SortOrder = 0
 
 ARC9.LoadAttachment(ATT, "ud_m16_upper_556")
+
+
+ATT = {}
+
+ATT.PrintName = "R0635 9x19mm Upper Receiver"
+ATT.CompactName = "9x19mm"
+ATT.Icon = Material("entities/att/uc_bullets/9x19.png", "mips smooth")
+ATT.Description = [[A converted receiver that fires 9x19mm Parabellum rounds.
+The smaller caliber drastically reduces recoil, but has much less range and is less accurate.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_upper"
+ATT.SortOrder = 1
+
+ATT.RPMMult = 1 / 0.85
+
+ATT.DamageMax = ArcCW.UC.StdDmg["9mm"].max
+ATT.DamageMin = ArcCW.UC.StdDmg["9mm"].min
+ATT.Penetration = ArcCW.UC.StdDmg["9mm"].pen
+
+ATT.RangeMax = 150 / ARC9.HUToM
+
+ATT.RecoilMult = 0.75
+
+local path = ")^weapons/arccw_ud/glock/"
+
+ATT.ShootSound = "weapons/arccw_ud/m16/fire_9.ogg"
+ATT.ShootSoundIndoor = "weapons/arccw_ud/m16/fire_9.ogg"
+ATT.ShootSoundSilenced = {path .. "fire-sup-01.ogg", path .. "fire-sup-02.ogg", path .. "fire-sup-03.ogg", path .. "fire-sup-04.ogg", path .. "fire-sup-05.ogg", path .. "fire-sup-06.ogg"}
+ATT.ShootSoundSilencedIndoor = {path .. "fire-sup-01.ogg", path .. "fire-sup-02.ogg", path .. "fire-sup-03.ogg", path .. "fire-sup-04.ogg", path .. "fire-sup-05.ogg", path .. "fire-sup-06.ogg"}
+ATT.DistantShootSound = {
+    path .. "fire-dist-01.ogg",
+    path .. "fire-dist-02.ogg",
+    path .. "fire-dist-03.ogg",
+    path .. "fire-dist-04.ogg",
+    path .. "fire-dist-05.ogg",
+    path .. "fire-dist-06.ogg"
+}
+ATT.DistantShootSoundIndoor = {
+    path .. "fire-dist-int-01.ogg",
+    path .. "fire-dist-int-02.ogg",
+    path .. "fire-dist-int-03.ogg",
+    path .. "fire-dist-int-04.ogg",
+    path .. "fire-dist-int-05.ogg",
+    path .. "fire-dist-int-06.ogg"
+}
+
+ATT.Attachments = {
+    {
+        PrintName = "Magazine",
+        Pos = Vector(-0.2, 0, 3),
+        Ang = Angle(90, 0, -90),
+
+        Category = "ud_m16_mag_9mm",
+        Integral = "ud_m16_mag_9mm_20",
+    },
+}
+
+ATT.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_9mm"
+end
+
+ARC9.LoadAttachment(ATT, "ud_m16_upper_9mm")
 
 -----------------------------------------------------------
 -- Lower Receiver
@@ -703,6 +765,47 @@ ATT.ReloadTimeMult = 1.5
 ATT.SwayMult = 1.75
 
 ARC9.LoadAttachment(ATT, "ud_m16_mag_100")
+
+
+ATT = {}
+
+ATT.PrintName = "R0635 9x19mm 20-Round Box Magazine"
+ATT.CompactName = "20-Round"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_9mm_20.png", "mips smooth")
+ATT.Description = [[A short stick magazine used on the 9mm caliber AR-15.
+It is much lighter compared to a rifle caliber magazine.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_mag_9mm"
+ATT.SortOrder = 0
+
+ATT.ClipSize = 20
+
+ATT.AimDownSightsTimeAdd = -0.06
+ATT.SprintToFireTimeAdd = -0.08
+ATT.ReloadTimeMult = 0.85
+ATT.SwayMult = 0.85
+
+ARC9.LoadAttachment(ATT, "ud_m16_mag_9mm_20")
+
+ATT = {}
+
+ATT.PrintName = "R0635 9x19mm 32-Round Box Magazine"
+ATT.CompactName = "32-Round"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_9mm_32.png", "mips smooth")
+ATT.Description = [[A long stick magazine used on the 9mm caliber AR-15.
+It is marginally lighter than the equivalent rifle caliber magazine.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_mag_9mm"
+ATT.SortOrder = 1
+
+ATT.ClipSize = 32
+
+ATT.AimDownSightsTimeAdd = -0.03
+ATT.SprintToFireTimeAdd = -0.04
+ATT.ReloadTimeMult = 0.95
+ATT.SwayMult = 0.95
+
+ARC9.LoadAttachment(ATT, "ud_m16_mag_9mm_32")
 
 -----------------------------------------------------------
 -- Grip

@@ -1115,6 +1115,8 @@ SWEP.AttachmentElements = {
     ["ud_m16_mag_40"] = {Bodygroups = {{2, 2}}},
     ["ud_m16_mag_60"] = {Bodygroups = {{2, 3}}},
     ["ud_m16_mag_100"] = {Bodygroups = {{2, 4}}},
+    ["ud_m16_mag_9mm_20"] = {Bodygroups = {{2, 5}}},
+    ["ud_m16_mag_9mm_32"] = {Bodygroups = {{2, 6}}},
 }
 
 local blen = {
@@ -1297,6 +1299,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 3.5, 4),
         Ang = Angle(90, 0, -90),
 
+        ExcludeElements = {"ud_m16_upper_9mm"},
         Category = "ud_m16_mag",
         Installed = "ud_m16_mag_30",
         Integral = "ud_m16_mag_30",
