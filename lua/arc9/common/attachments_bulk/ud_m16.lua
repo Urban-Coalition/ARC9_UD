@@ -1,4 +1,5 @@
 local ATT = {}
+local m16_hg_lhik_offset = Vector(-10, 0, 1.5 - 0.33)
 
 -----------------------------------------------------------
 -- Top
@@ -421,9 +422,9 @@ ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_hg"
 ATT.SortOrder = 1
 
-ATT.LHIK = false
+ATT.LHIK = true
 ATT.Model = "models/weapons/arccw/atts/classic_lhik.mdl"
-ATT.ModelOffset = Vector(-20, -2.6, 3.8)
+ATT.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(11.5, 2.8, -4.2)) + m16_hg_lhik_offset
 
 ATT.ActivateElements = {"ud_m16_no10"}
 ATT.ExcludeElements = {"ud_m16_barrel_10"}
@@ -461,6 +462,10 @@ ATT.SortOrder = 1
 ATT.SwayMult = 0.9
 ATT.AimDownSightsTimeAdd = -0.03
 ATT.RecoilRandomSideMult = 1.15
+
+ATT.LHIK = true
+ATT.Model = "models/weapons/arccw/atts/ru556_lhik.mdl"
+ATT.ModelOffset = (Vector(0.41, 0, -1.63) - Vector(11.5, 2.8, -4.2)) + m16_hg_lhik_offset
 
 ATT.ActivateElements = {"ud_m16_fs"}
 

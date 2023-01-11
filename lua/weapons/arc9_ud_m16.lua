@@ -338,6 +338,23 @@ SWEP.Animations = {
             {s = common .. "cloth_4.ogg",  t = 0.5},
             {s = path .. "chamber.ogg",  t = 0.5},
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         ProcDraw = true,
     },
     ["idle"] = {
@@ -473,6 +490,28 @@ SWEP.Animations = {
             {s = common .. "rattle_b2i_rifle.ogg", t = 1.7},
             {s = common .. "shoulder.ogg", t = 1.8},
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -496,6 +535,28 @@ SWEP.Animations = {
             {s = common .. "rattle_b2i_rifle.ogg", t = 2.0},
             {s = common .. "grab-polymer.ogg", t = 2.1, v = 0.35},
             {s = common .. "shoulder.ogg", t = 2.1},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
         },
     },
 
@@ -843,6 +904,10 @@ SWEP.AttachmentElements = {
         }
     },
 
+    ["rail_fg"] = {
+        Bodygroups = {{9, 1}},
+    },
+
     ["ud_m16_gas_lp"] = {}, -- handled in code
 
     ["ud_stock_carbine_ex"] = {
@@ -891,7 +956,7 @@ SWEP.Hook_ModifyElements = function(wep, data)
     local atts = wep.Attachments
 
     local barrel = string.Replace(atts[2].Installed or "20", "ud_m16_barrel_", "")
-    local hg = string.Replace(atts[3].Installed or "ar","ud_m16_hg_","")
+    local hg = string.Replace(atts[3].Installed or "a2","ud_m16_hg_","")
     local gbPos = hgLookup[hg] and hgLookup[hg][3] or 0
 
     if gbPos == 0 and barrel ~= "20" then
@@ -929,6 +994,10 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 
     if hgLookup[hg] and blen[barrel] > 0 then
         vm:SetBodygroup(5, hgLookup[hg][blen[barrel]])
+    end
+
+    if hg == "a4" and atts[5].Installed then
+        vm:SetBodygroup(9, 0)
     end
 end
 
@@ -971,6 +1040,16 @@ SWEP.Attachments = {
         Icon_Offset = Vector(1, 0, 0),
 
         Category = "muzzle",
+    },
+    {
+        PrintName = "Underbarrel",
+        Bone = "m16_parent",
+        Pos = Vector(0, 1, 10),
+        Ang = Angle(90, 0, 90),
+        Icon_Offset = Vector(0, 0, 1),
+
+        InstalledElements = {"rail_fg"},
+        Category = {"grip"},
     },
     {
         PrintName = "Upper",
