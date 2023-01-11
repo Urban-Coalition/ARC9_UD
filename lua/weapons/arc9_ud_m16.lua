@@ -867,20 +867,25 @@ SWEP.AttachmentElements = {
 
     ["ud_m16_gb_short"] = {
         AttPosMods = {
-            [14] = {
+            [15] = {
                 Pos = Vector(0, -0.33, 14),
             },
-            [15] = {
+            [16] = {
                 Pos = Vector(0, -1.62, 12.25),
             },
         }
     },
     ["ud_m16_gb_ru556"] = {
         AttPosMods = {
-            [14] = {
+            [15] = {
                 Pos = Vector(0, -0.33, 15.25),
             },
-            [15] = {
+        }
+    },
+
+    ["ud_m16_fs_ru556"] = {
+        AttPosMods = {
+            [16] = {
                 Pos = Vector(0, -1.62, 13.5),
             },
         }
@@ -963,6 +968,10 @@ SWEP.Hook_ModifyElements = function(wep, data)
         data["ud_m16_gb_short"] = true
     elseif gbPos == 3 and barrel ~= "20" then
         data["ud_m16_gb_ru556"] = true
+    end
+
+    if gbPos == 3 then
+        data["ud_m16_fs_ru556"] = true
     end
 end
 
@@ -1146,9 +1155,19 @@ SWEP.Attachments = {
         Bone = "m16_parent",
         Pos = Vector(0, -1.62, 16.75),
         Ang = Angle(90, 0, -90),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1),
 
         Category = "ud_m16_fs",
+        RequireElements = {"ud_m16_fs"},
+    },
+    {
+        PrintName = "Tactical",
+        Bone = "m16_parent",
+        Pos = Vector(0, -1.62, 12),
+        Ang = Angle(90, 0, 90),
+        Icon_Offset = Vector(0, 0, -1),
+
+        Category = "csgo_tac",
         RequireElements = {"ud_m16_fs"},
     },
 
