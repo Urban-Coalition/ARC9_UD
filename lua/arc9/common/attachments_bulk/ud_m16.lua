@@ -585,6 +585,126 @@ ATT.Firemodes = {
 ARC9.LoadAttachment(ATT, "ud_m16_lower_semi")
 
 -----------------------------------------------------------
+-- Magazine
+-----------------------------------------------------------
+
+ATT = {}
+
+ATT.PrintName = "STANAG 30-Round Box Magazine"
+ATT.CompactName = "30-Round"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_mag_30.png", "mips smooth")
+ATT.Description = [[Standard magazine compatible among most 5.56x45mm rifles.
+The thirty-round capacity is typically regarded as the best balance between capacity and ease of carry.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_mag"
+ATT.SortOrder = 0
+
+ARC9.LoadAttachment(ATT, "ud_m16_mag_30")
+
+ATT = {}
+
+ATT.PrintName = "USGI 20-Round Box Magazine"
+ATT.CompactName = "20-Round"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_mag_20.png", "mips smooth")
+ATT.Description = [[Straight magazines originally produced for the M16.
+Its relatively lower capacity allows it to be lighter and more reliable than the standard magazines.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_mag"
+ATT.SortOrder = 20
+
+ATT.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_20"
+end
+
+ATT.ClipSize = 20
+
+ATT.AimDownSightsTimeAdd = -0.03
+ATT.SprintToFireTimeAdd = -0.05
+ATT.ReloadTimeMult = 0.85
+ATT.SwayMult = 0.75
+ATT.MalfunctionMeanShotsToFailMult = 1.5
+
+
+ARC9.LoadAttachment(ATT, "ud_m16_mag_20")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 40-Round Box Magazine"
+ATT.CompactName = "40-Round"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_mag_40.png", "mips smooth")
+ATT.Description = [[Aftermarket magazines with a slightly higher magazine capacity.
+The length is awkward and encumbers the weapon slightly, but may be worth the additional rounds.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_mag"
+ATT.SortOrder = 40
+
+ATT.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_40"
+end
+
+ATT.ClipSize = 40
+
+ATT.SprintToFireTimeAdd = 0.05
+ATT.AimDownSightsTimeAdd = 0.03
+ATT.ReloadTimeMult = 1.15
+ATT.SwayMult = 1.15
+
+ARC9.LoadAttachment(ATT, "ud_m16_mag_40")
+
+ATT = {}
+
+ATT.PrintName = "Surefire 60-Round Casket Magazine"
+ATT.CompactName = "60-Round"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_mag_40.png", "mips smooth")
+ATT.Description = [[Aftermarket magazine with double the standard capacity.
+Adds noticeable weight to the weapon, and introduces.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_mag"
+ATT.SortOrder = 60
+
+ATT.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_60"
+end
+
+ATT.ClipSize = 60
+
+ATT.Malfunction = true
+
+ATT.SprintToFireTimeAdd = 0.1
+ATT.AimDownSightsTimeAdd = 0.06
+ATT.ReloadTimeMult = 1.25
+ATT.SwayMult = 1.25
+
+ARC9.LoadAttachment(ATT, "ud_m16_mag_60")
+
+ATT = {}
+
+ATT.PrintName = "C-Mag 100-Round Drum Magazine"
+ATT.CompactName = "100-Round"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_mag_100.png", "mips smooth")
+ATT.Description = [[Dual-drum magazine with an incredibly generous capacity.
+Very heavy, and prone to feeding failures.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_mag"
+ATT.SortOrder = 100
+
+ATT.Hook_SelectReloadAnimation = function(wep, anim)
+    return anim .. "_100"
+end
+
+ATT.ClipSize = 100
+
+ATT.Malfunction = true
+ATT.MalfunctionMeanShotsToFailMult = 0.75
+
+ATT.SprintToFireTimeAdd = 0.2
+ATT.AimDownSightsTimeAdd = 0.12
+ATT.ReloadTimeMult = 1.5
+ATT.SwayMult = 1.75
+
+ARC9.LoadAttachment(ATT, "ud_m16_mag_100")
+
+-----------------------------------------------------------
 -- Grip
 -----------------------------------------------------------
 

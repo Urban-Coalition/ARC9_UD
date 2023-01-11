@@ -90,6 +90,8 @@ SWEP.Firemodes = {
     }
 }
 
+SWEP.Bash = true
+
 SWEP.BarrelLength = 24
 
 -------------------------- RECOIL
@@ -151,13 +153,13 @@ SWEP.Spread = 4 * ARC9.MOAToAcc
 
 SWEP.FreeAimRadius = 10
 
-SWEP.Sway = 1.5 -- How much the gun sways.
+SWEP.Sway = 1 -- How much the gun sways.
 
-SWEP.SwayMultMidAir = 4
-SWEP.SwayMultMove = 1.75
+SWEP.SwayMultMidAir = 2
+SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.25
 SWEP.SwayMultShooting = 1.1
-SWEP.SwayMultRecoil = 1.05
+SWEP.SwayMultRecoil = 1
 SWEP.SwayMultHipFire = 1.5
 
 SWEP.FreeAimRadiusMultSights = 0
@@ -171,6 +173,11 @@ SWEP.SpeedMult = 0.9
 SWEP.SpeedMultSights = 0.75
 SWEP.SpeedMultShooting = 1
 SWEP.SpeedMultCrouch = 1
+
+-------------------------- MALFUNCTIONS
+
+SWEP.Malfunction = false -- not realism
+SWEP.MalfunctionMeanShotsToFail = 300
 
 -------------------------- TRACERS
 
@@ -583,8 +590,30 @@ SWEP.Animations = {
             {s = common .. "grab-polymer.ogg", t = 1.7, v = 0.25},
             {s = common .. "shoulder.ogg", t = 1.75},
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
-    ["reload_empty_20"] = {
+    ["reload_20_empty"] = {
         Source = "reload_empty_20",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Time = 86 / 30,
@@ -606,6 +635,28 @@ SWEP.Animations = {
             {s = common .. "rattle_b2i_rifle.ogg", t = 1.95},
             {s = common .. "grab-polymer.ogg", t = 2.075, v = 0.25},
             {s = common .. "shoulder.ogg", t = 2.13},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
         },
     },
 
@@ -631,8 +682,30 @@ SWEP.Animations = {
             {s = common .. "rattle_b2i_rifle.ogg", t = 1.65},
             {s = common .. "shoulder.ogg", t = 1.75},
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
-    ["reload_empty_40"] = {
+    ["reload_40_empty"] = {
         Source = "reload_empty_40",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Time = 85 / 30,
@@ -651,6 +724,28 @@ SWEP.Animations = {
             {s = path .. "boltdrop.ogg", t = 1.78},
             {s = common .. "rattle_b2i_rifle.ogg", t = 2.1},
             {s = common .. "shoulder.ogg", t = 2.2},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
         },
     },
 
@@ -674,8 +769,30 @@ SWEP.Animations = {
             {s = common .. "rattle_b2i_rifle.ogg", t = 1.8},
             {s = common .. "shoulder.ogg", t = 1.9},
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
-    ["reload_empty_60"] = {
+    ["reload_60_empty"] = {
         Source = "reload_empty_60",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Time = 85 / 30,
@@ -695,6 +812,28 @@ SWEP.Animations = {
             {s = common .. "rattle_b2i_rifle.ogg", t = 2.1},
             {s = common .. "grab-polymer.ogg", t = 2.15, v = 0.25},
             {s = common .. "shoulder.ogg", t = 2.2},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
         },
     },
 
@@ -719,8 +858,30 @@ SWEP.Animations = {
             {s = common .. "grab-polymer.ogg", t = 1.85, v = 0.25},
             {s = common .. "shoulder.ogg", t = 2.0},
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
-    ["reload_empty_100"] = {
+    ["reload_100_empty"] = {
         Source = "reload_empty_100",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Time = 90 / 30,
@@ -741,6 +902,28 @@ SWEP.Animations = {
             {s = common .. "rattle_b2i_rifle.ogg", t = 2.5},
             {s = common .. "grab-polymer.ogg", t = 2.55, v = 0.25},
             {s = common .. "shoulder.ogg", t = 2.6},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
         },
     },
 
@@ -763,7 +946,7 @@ SWEP.Animations = {
             {s = common .. "shoulder.ogg", t = 1.93},
         },
     },
-    ["reload_empty_9mm"] = {
+    ["reload_9mm_empty"] = {
         Source = "reload_empty_9mm",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Time = 80 / 30,
@@ -873,6 +1056,9 @@ SWEP.AttachmentElements = {
             [16] = {
                 Pos = Vector(0, -1.62, 12.25),
             },
+            [17] = {
+                Pos = Vector(0, -1.62, 9),
+            },
         }
     },
     ["ud_m16_gb_ru556"] = {
@@ -924,6 +1110,11 @@ SWEP.AttachmentElements = {
     ["ud_m16_stock_wood"] = {
         Bodygroups = {{7, 9}},
     },
+
+    ["ud_m16_mag_20"] = {Bodygroups = {{2, 1}}},
+    ["ud_m16_mag_40"] = {Bodygroups = {{2, 2}}},
+    ["ud_m16_mag_60"] = {Bodygroups = {{2, 3}}},
+    ["ud_m16_mag_100"] = {Bodygroups = {{2, 4}}},
 }
 
 local blen = {
@@ -1107,6 +1298,8 @@ SWEP.Attachments = {
         Ang = Angle(90, 0, -90),
 
         Category = "ud_m16_mag",
+        Installed = "ud_m16_mag_30",
+        Integral = "ud_m16_mag_30",
     },
     {
         PrintName = "Ammo Type",
