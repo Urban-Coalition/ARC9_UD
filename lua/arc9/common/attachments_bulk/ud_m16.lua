@@ -816,9 +816,55 @@ ATT.Icon = Material("entities/att/acwatt_ud_m16_grip_default.png", "mips smooth"
 ATT.Description = [[Standard grip.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_grip"
-ATT.SortOrder = 1
+ATT.SortOrder = 0
 
 ARC9.LoadAttachment(ATT, "ud_m16_grip_standard")
+
+ATT = {}
+
+ATT.PrintName = "M16 Wooden Grip"
+ATT.CompactName = "Wooden"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_grip_default.png", "mips smooth")
+ATT.Description = [[For a classy look.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_grip"
+ATT.SortOrder = 1
+
+ATT.AimDownSightsTimeAdd = 0.025
+ATT.RecoilRandomSideMult = 0.95
+ATT.RecoilPatternDriftMult = 0.95
+
+ARC9.LoadAttachment(ATT, "ud_m16_grip_wood")
+
+ATT = {}
+
+ATT.PrintName = "M16 Ergonomic Grip"
+ATT.CompactName = "Ergonomic"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_grip_ergo.png", "mips smooth")
+ATT.Description = [[Polymer grip with a comfortable shape, enabling faster handling.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_grip"
+ATT.SortOrder = 1
+
+ATT.AimDownSightsTimeAdd = -0.025
+ATT.RecoilPatternDriftMult = 1.1
+
+ARC9.LoadAttachment(ATT, "ud_m16_grip_ergo")
+
+ATT = {}
+
+ATT.PrintName = "M16 Skeletonized Grip"
+ATT.CompactName = "Skeleton"
+ATT.Icon = Material("entities/att/acwatt_ud_m16_grip_skel.png", "mips smooth")
+ATT.Description = [[Lightweight grip, marginally reducing weapon weight.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_grip"
+ATT.SortOrder = 1
+
+ATT.SprintToFireTimeAdd = -0.025
+ATT.RecoilRandomSideMult = 1.1
+
+ARC9.LoadAttachment(ATT, "ud_m16_grip_skel")
 
 -----------------------------------------------------------
 -- Stock

@@ -1161,6 +1161,10 @@ SWEP.AttachmentElements = {
     ["ud_m16_mag_100"] = {Bodygroups = {{2, 4}}},
     ["ud_m16_mag_9mm_20"] = {Bodygroups = {{2, 5}}},
     ["ud_m16_mag_9mm_32"] = {Bodygroups = {{2, 6}}},
+
+    ["ud_m16_grip_ergo"] = {Bodygroups = {{8, 1}}},
+    ["ud_m16_grip_skel"] = {Bodygroups = {{8, 2}}},
+    ["ud_m16_grip_wood"] = {Bodygroups = {{8, 3}}},
 }
 
 local blen = {
