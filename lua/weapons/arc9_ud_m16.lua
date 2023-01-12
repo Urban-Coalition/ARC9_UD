@@ -945,6 +945,28 @@ SWEP.Animations = {
             {s = common .. "magpouchin.ogg", t = 1.55},
             {s = common .. "shoulder.ogg", t = 1.93},
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["reload_9mm_empty"] = {
         Source = "reload_empty_9mm",
@@ -961,6 +983,28 @@ SWEP.Animations = {
             {s = path .. "chamber_press.ogg", t = 1.7},
             {s = rottle, t = 1.39},
             {s = common .. "shoulder.ogg", t = 2.15},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
         },
     },
 

@@ -59,7 +59,7 @@ ATT.Description = [[A top rail mount with modern Picatinny rails.
 Place your favourite optics without ruining the classic AR look.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_ch"
-ATT.SortOrder = 0
+ATT.SortOrder = 1
 
 ATT.Attachments = {
     {
@@ -82,7 +82,7 @@ ATT.Description = [[An old-school top rail mount.
 Place your favourite optics without ruining the classic AR look.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_ch"
-ATT.SortOrder = 0
+ATT.SortOrder = 1
 
 ATT.Attachments = {
     {
@@ -559,7 +559,6 @@ ATT.PrintName = "M16A2 Burst Lower Receiver"
 ATT.CompactName = "Burst"
 ATT.Icon = Material("entities/att/acwatt_ud_m16_receiver_default.png", "mips smooth")
 ATT.Description = [[Standard lower receiver firing up to 3 rounds with the trigger held.
-
 In real life, the burst mechanism does not reset on trigger release, which can result in awkward half-bursts.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_lower"
@@ -573,14 +572,12 @@ ATT.PrintName = "M16A2 Cam-lock Burst Lower Receiver"
 ATT.CompactName = "Alt. Burst"
 ATT.Icon = Material("entities/att/acwatt_ud_m16_receiver_default.png", "mips smooth")
 ATT.Description = [[An alternative burst fire receiver that fires the entire burst with one trigger pull.
-
 This has a slight benefit for recoil control, but is mostly down to preference.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_lower"
 ATT.SortOrder = 1.1
 
 ATT.InvAtt = "ud_m16_lower_burst"
-
 
 ATT.Firemodes = {
     {
