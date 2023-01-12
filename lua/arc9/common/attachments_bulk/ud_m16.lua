@@ -1,5 +1,6 @@
 local ATT = {}
 local m16_hg_lhik_offset = Vector(-10, 0, 1.5 - 0.33)
+local path
 
 -----------------------------------------------------------
 -- Top
@@ -487,6 +488,54 @@ ATT.SortOrder = 0
 
 ARC9.LoadAttachment(ATT, "ud_m16_upper_556")
 
+ATT = {}
+
+ATT.PrintName = "M16 .300 BLK Upper Receiver"
+ATT.CompactName = ".300 BLK"
+ATT.Icon = Material("entities/att/uc_bullets/300blackout.png", "mips smooth")
+ATT.Description = [[Standard upper receiver firing 5.56x45mm NATO rounds.]]
+ATT.MenuCategory = "ARC9 - Urban Coalition"
+ATT.Category = "ud_m16_upper"
+ATT.SortOrder = 1
+
+ATT.DamageMax = ArcCW.UC.StdDmg["300blk"].max
+ATT.DamageMin = ArcCW.UC.StdDmg["300blk"].min
+ATT.Penetration = ArcCW.UC.StdDmg["300blk"].pen
+
+ATT.RangeMax = 300 / ARC9.HUToM
+
+ATT.PhysBulletMuzzleVelocity = 410 / ARC9.HUToM
+
+ATT.ShellModel = "models/weapons/arccw/uc_shells/300blk.mdl"
+
+path = "weapons/arccw_ud/m16/"
+
+ATT.ShootSound = {
+    path .. "fire-300-01.ogg",
+    path .. "fire-300-02.ogg",
+    path .. "fire-300-03.ogg",
+    path .. "fire-300-04.ogg",
+    path .. "fire-300-05.ogg",
+    path .. "fire-300-06.ogg"
+}
+ATT.ShootSoundIndoor = {
+    path .. "fire-300-01.ogg",
+    path .. "fire-300-02.ogg",
+    path .. "fire-300-03.ogg",
+    path .. "fire-300-04.ogg",
+    path .. "fire-300-05.ogg",
+    path .. "fire-300-06.ogg"
+}
+ATT.DistantShootSound = {
+    path .. "fire-dist-300-01.ogg",
+    path .. "fire-dist-300-02.ogg",
+    path .. "fire-dist-300-03.ogg",
+    path .. "fire-dist-300-04.ogg",
+    path .. "fire-dist-300-05.ogg",
+    path .. "fire-dist-300-06.ogg"
+}
+
+ARC9.LoadAttachment(ATT, "ud_m16_upper_300blk")
 
 ATT = {}
 
@@ -509,7 +558,7 @@ ATT.RangeMax = 150 / ARC9.HUToM
 
 ATT.RecoilMult = 0.75
 
-local path = ")^weapons/arccw_ud/glock/"
+path = ")^weapons/arccw_ud/glock/"
 
 ATT.ShootSound = "weapons/arccw_ud/m16/fire_9.ogg"
 ATT.ShootSoundIndoor = "weapons/arccw_ud/m16/fire_9.ogg"
@@ -546,6 +595,9 @@ ATT.Attachments = {
 ATT.Hook_SelectReloadAnimation = function(wep, anim)
     return anim .. "_9mm"
 end
+
+ATT.Ammo = "pistol"
+ATT.ShellModel = "models/weapons/arccw/uc_shells/9x19.mdl"
 
 ARC9.LoadAttachment(ATT, "ud_m16_upper_9mm")
 
