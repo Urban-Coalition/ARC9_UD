@@ -463,6 +463,28 @@ SWEP.Animations = {
             {s = common .. "cloth_4.ogg",  t = 0.5},
             {s = path .. "chamber.ogg",  t = 0.5},
         },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["fix_empty"] = {
         Source = "fix_empty",
@@ -472,6 +494,28 @@ SWEP.Animations = {
             {s = path .. "chback.ogg",   t = 0.15},
             {s = common .. "cloth_4.ogg",  t = 0.5},
             {s = path .. "ch_forward_empty.ogg",  t = 0.5},
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
         },
     },
 
