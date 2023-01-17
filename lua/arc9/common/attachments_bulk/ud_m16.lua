@@ -493,7 +493,8 @@ ATT = {}
 ATT.PrintName = "M16 .300 BLK Upper Receiver"
 ATT.CompactName = ".300 BLK"
 ATT.Icon = Material("entities/att/uc_bullets/300blackout.png", "mips smooth")
-ATT.Description = [[Standard upper receiver firing 5.56x45mm NATO rounds.]]
+ATT.Description = [[Aftermarket receiver that fires .300 Blackout cartridges, identical to 5.56x45mm in diameter but with a much larger projectile.
+Its low muzzle velocity makes it well suited for subsonic loads.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_upper"
 ATT.SortOrder = 1
@@ -768,7 +769,7 @@ ATT.PrintName = "Surefire 60-Round Casket Magazine"
 ATT.CompactName = "60-Round"
 ATT.Icon = Material("entities/att/acwatt_ud_m16_mag_40.png", "mips smooth")
 ATT.Description = [[Aftermarket magazine with double the standard capacity.
-Adds noticeable weight to the weapon, and introduces.]]
+Adds noticeable weight to the weapon, and has a chance to jam.]]
 ATT.MenuCategory = "ARC9 - Urban Coalition"
 ATT.Category = "ud_m16_mag"
 ATT.SortOrder = 60
