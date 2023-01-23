@@ -4,7 +4,7 @@ SWEP.Base = "arc9_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - Urban Coalition"
-SWEP.SubCategory = "Rifles"
+SWEP.SubCategory = "Urban Decay"
 
 SWEP.PrintName = "M16A2"
 SWEP.IconOverride = "entities/arccw_ud_m16.png"
@@ -49,7 +49,7 @@ SWEP.DefaultBodygroups = "0000000000000000000000"
 SWEP.DamageMax = ArcCW.UC.StdDmg["556"].max
 SWEP.DamageMin = ArcCW.UC.StdDmg["556"].min
 
-SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 0
 
 SWEP.RangeMin = 50 / ARC9.HUToM
 SWEP.RangeMax = 350 / ARC9.HUToM
@@ -155,12 +155,12 @@ SWEP.FreeAimRadius = 10
 
 SWEP.Sway = 1 -- How much the gun sways.
 
-SWEP.SwayMultMidAir = 2
+SWEP.SwayMultMidAir = 1
 SWEP.SwayMultMove = 1.5
 SWEP.SwayMultCrouch = 0.25
 SWEP.SwayMultShooting = 1.1
 SWEP.SwayMultRecoil = 1
-SWEP.SwayMultHipFire = 1.5
+SWEP.SwayMultHipFire = 1
 
 SWEP.FreeAimRadiusMultSights = 0
 
@@ -170,8 +170,8 @@ SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming
 SWEP.SprintToFireTime = 0.38 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.SpeedMult = 0.9
-SWEP.SpeedMultSights = 0.75
-SWEP.SpeedMultShooting = 1
+SWEP.SpeedMultSights = 0.5
+SWEP.SpeedMultShooting = 0.85
 SWEP.SpeedMultCrouch = 1
 
 -------------------------- MALFUNCTIONS
@@ -258,24 +258,7 @@ SWEP.ShootSound = {
     path .. "fire-05.ogg",
     path .. "fire-06.ogg"
 }
-SWEP.ShootSoundIndoor = {
-    path .. "fire-01.ogg",
-    path .. "fire-02.ogg",
-    path .. "fire-03.ogg",
-    path .. "fire-04.ogg",
-    path .. "fire-05.ogg",
-    path .. "fire-06.ogg"
-}
-
 SWEP.ShootSoundSilenced = {
-    path .. "fire-sup-01.ogg",
-    path .. "fire-sup-02.ogg",
-    path .. "fire-sup-03.ogg",
-    path .. "fire-sup-04.ogg",
-    path .. "fire-sup-05.ogg",
-    path .. "fire-sup-06.ogg"
-}
-SWEP.ShootSoundSilencedIndoor = {
     path .. "fire-sup-01.ogg",
     path .. "fire-sup-02.ogg",
     path .. "fire-sup-03.ogg",
