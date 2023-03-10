@@ -254,21 +254,23 @@ SWEP.DryFireSingleAction = false
 SWEP.EnterSightsSound = ratel
 SWEP.ExitSightsSound = ratel
 
+local tail = ")/arccw_uc/common/9x19/"
+
 SWEP.DistantShootSound = {
-    path .. "fire-dist-01.ogg",
-    path .. "fire-dist-02.ogg",
-    path .. "fire-dist-03.ogg",
-    path .. "fire-dist-04.ogg",
-    path .. "fire-dist-05.ogg",
-    path .. "fire-dist-06.ogg"
+    tail .. "fire-dist-9x19-pistol-ext-01.ogg",
+    tail .. "fire-dist-9x19-pistol-ext-02.ogg",
+    tail .. "fire-dist-9x19-pistol-ext-03.ogg",
+    tail .. "fire-dist-9x19-pistol-ext-04.ogg",
+    tail .. "fire-dist-9x19-pistol-ext-05.ogg",
+    tail .. "fire-dist-9x19-pistol-ext-06.ogg"
 }
 SWEP.DistantShootSoundIndoor = {
-    common .. "fire-dist-int-pistol-01.ogg",
-    common .. "fire-dist-int-pistol-02.ogg",
-    common .. "fire-dist-int-pistol-03.ogg",
-    common .. "fire-dist-int-pistol-04.ogg",
-    common .. "fire-dist-int-pistol-05.ogg",
-    common .. "fire-dist-int-pistol-06.ogg"
+    tail .. "fire-dist-9x19-pistol-int-01.ogg",
+    tail .. "fire-dist-9x19-pistol-int-02.ogg",
+    tail .. "fire-dist-9x19-pistol-int-03.ogg",
+    tail .. "fire-dist-9x19-pistol-int-04.ogg",
+    tail .. "fire-dist-9x19-pistol-int-05.ogg",
+    tail .. "fire-dist-9x19-pistol-int-06.ogg"
 }
 
 SWEP.DistantShootSoundSilenced = {
@@ -571,7 +573,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
-        Time = 56 / 30,
+        Time = 66 / 30,
         MinProgress = 1.1,
         LastClip1OutTime = 0.9,
         LHIK = true,
@@ -581,19 +583,23 @@ SWEP.Animations = {
         LHIKOut = 0.3,
         EventTable = {
             {s = rottle, t = 0},
-            {s = common .. "magpouch_pull_small.ogg", t = 0.075},
-            {s = rattel, t = 0.3},
-            {s = path .. "magout_partial.ogg",        t = 0.3, c = ci},
-            {s = rattel, t = 0.35},
-            {s = path .. "magin_new.ogg",         t = 0.4, c = ci},
-            {s = common .. "magpouch_replace_small.ogg", t = 1.25},
-            {s = rottle, t = 0.5},
+            {s = common .. "magpouch_pull_small.ogg", t = 0.1, v = 0.5},
+            {s = path .. "magout_partial_start.ogg",        t = 0.2, c = ci},
+            {s = ratel, t = 0.37},
+            {s = path .. "magout_partial.ogg",        t = 0.5, c = ci},
+            {s = ratel, t = 0.4},
+            {s = path .. "magin_new.ogg",         t = 0.65, c = ci},
+            {s = rottle, t = 0.9, v = 0.6},
+            {s = rottle, t = 1.2},
+            {s = common .. "magpouch_replace_small.ogg", t = 1.375},
+            {s = ratel, t = 1.6},
+            {s = path .. "grab.ogg",         t = 1.8, c = ci},
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
-        Time = 65 / 30,
+        Time = 75 / 30,
         MinProgress = 1.5,
         LastClip1OutTime = 0.7,
         LHIK = true,
@@ -602,14 +608,20 @@ SWEP.Animations = {
         LHIKEaseOut = 0.15,
         LHIKOut = 0.3,
         EventTable = {
-            {s = rattel, t = 0},
+            {s = ratel, t = 0},
+            {s = rottle, t = 0.1},
             {s = path .. "magout_empty.ogg",        t = 0.13, c = ci},
             {s = common .. "magpouch_pull_small.ogg", t = 0.35},
-            {s = path .. "magin_new.ogg",         t = 0.5, v = 1.5},
-            {s = rattel, t = 0.5},
+            {s = rottle, t = 0.36, v = 0.6},
+            {s = path .. "magin_new.ogg",         t = 0.6, v = 1.5},
+            {s = ratel, t = 0.5},
             {s = common .. "pistol_magdrop.ogg",  t = 0.65},
-            {s = rottle, t = 1.15},
-            {s = path .. "chamber.ogg",      t = 1.39},
+            {s = rottle, t = 1.15, v = 0.6},
+            {s = ratel, t = 1.55},
+            {s = path .. "chamber.ogg",      t = 1.55},
+            {s = rottle, t = 1.6, v = 0.6},
+            {s = ratel, t = 1.7},
+            {s = path .. "grab.ogg",         t = 1.95, c = ci},
         },
     },
     ["reload_empty_fesiug"] = {

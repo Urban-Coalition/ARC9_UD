@@ -267,21 +267,23 @@ SWEP.ShootSoundSilenced = {
     path .. "fire-sup-06.ogg"
 }
 
+local tail = ")/arccw_uc/common/556x45/"
+
 SWEP.DistantShootSound = {
-    path .. "fire-dist-01.ogg",
-    path .. "fire-dist-02.ogg",
-    path .. "fire-dist-03.ogg",
-    path .. "fire-dist-04.ogg",
-    path .. "fire-dist-05.ogg",
-    path .. "fire-dist-06.ogg"
+    tail .. "fire-dist-556x45-rif-ext-01.ogg",
+    tail .. "fire-dist-556x45-rif-ext-02.ogg",
+    tail .. "fire-dist-556x45-rif-ext-03.ogg",
+    tail .. "fire-dist-556x45-rif-ext-04.ogg",
+    tail .. "fire-dist-556x45-rif-ext-05.ogg",
+    tail .. "fire-dist-556x45-rif-ext-06.ogg"
 }
 SWEP.DistantShootSoundIndoor = {
-    common .. "fire-dist-int-rifle-01.ogg",
-    common .. "fire-dist-int-rifle-02.ogg",
-    common .. "fire-dist-int-rifle-03.ogg",
-    common .. "fire-dist-int-rifle-04.ogg",
-    common .. "fire-dist-int-rifle-05.ogg",
-    common .. "fire-dist-int-rifle-06.ogg"
+    tail .. "fire-dist-556x45-rif-int-01.ogg",
+    tail .. "fire-dist-556x45-rif-int-02.ogg",
+    tail .. "fire-dist-556x45-rif-int-03.ogg",
+    tail .. "fire-dist-556x45-rif-int-04.ogg",
+    tail .. "fire-dist-556x45-rif-int-05.ogg",
+    tail .. "fire-dist-556x45-rif-int-06.ogg"
 }
 
 SWEP.DistantShootSoundSilenced = {
